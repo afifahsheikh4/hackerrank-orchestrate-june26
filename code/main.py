@@ -152,11 +152,12 @@ def main():
         if not evidence_standard_met:
           claim_status = "not_enough_information"    
 
-        if issue_type == "unknown":
-          claim_status = "not_enough_information"  
-
+        
         if "no damage" in claim_text:
            claim_status = "contradicted"
+
+        if issue_type == "unknown":
+          claim_status = "not_enough_information"  
 
          
         justification = f"Detected '{issue_type}' on '{object_part}' with {image_count} image(s), result: {claim_status}"
